@@ -1,0 +1,1 @@
+import{S as t,i as o,s as e,A as a}from"../chunks/vendor-97ef8583.js";import{g as i}from"../chunks/navigation-51f4a605.js";import"../chunks/singletons-12a22614.js";function r(s){return a(()=>i("/advent")),[]}class l extends t{constructor(n){super();o(this,n,r,null,e,{})}}export{l as default};
