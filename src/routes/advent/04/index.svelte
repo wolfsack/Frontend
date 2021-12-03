@@ -18,7 +18,7 @@
 </script>
 
 <div class="container">
-	<h1 class="title">Vierte Dezember</h1>
+	<h1 class="title">Vierter Dezember</h1>
 
 	<div class="wrapper">
 		<h2 class="quest-title">Aufgabe</h2>
