@@ -14,6 +14,10 @@
 	});
 </script>
 
+<svelte:head>
+	<title>8th December</title>
+</svelte:head>
+
 <div class="container">
 	<h1 class="title">Achter Dezember</h1>
 

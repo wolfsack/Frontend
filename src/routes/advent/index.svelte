@@ -1,3 +1,7 @@
+<svelte:head>
+	<title>Advent Days</title>
+</svelte:head>
+
 <div class="container">
 	<h1>Days</h1>
 	<ul class="list-days">
