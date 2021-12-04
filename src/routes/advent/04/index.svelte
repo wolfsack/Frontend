@@ -117,8 +117,8 @@
 	}
 
 	.quest-img {
-		height: 200px;
-		width: 200px;
+		max-width: 200px;
+		width: 70%;
 		margin: 2em;
 	}
 
@@ -145,5 +145,12 @@
 
 	.result-right {
 		color: rgb(0, 231, 0);
+	}
+
+	@media (max-width: 800px) {
+		.quest-quests {
+			flex-direction: column;
+			gap: 2em;
+		}
 	}
 </style>
