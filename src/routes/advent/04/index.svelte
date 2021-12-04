@@ -45,7 +45,7 @@
 						bind:value={answer_0}
 					/>
 				</form>
-				{#if answer_0 === '11100'}
+				{#if answer_0 === '001111' || answer_0 === '1111' || answer_0 === '01111'}
 					<h3 class="result result-right">Deine Antwort ist richtig!</h3>
 				{:else}
 					<h3 class="result result-wrong">Deine Antwort ist falsch!</h3>
