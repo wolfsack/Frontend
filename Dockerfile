@@ -1,6 +1,5 @@
 FROM node:16.13.1 as builder
 
-
 # update npm
 RUN npm install npm@latest -g
 
