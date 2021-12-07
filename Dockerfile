@@ -1,5 +1,9 @@
 FROM node:16.13.1 as builder
 
+
+# update npm
+RUN npm install npm@latest -g
+
 WORKDIR /app
 COPY package.json package-lock.json ./
 RUN npm ci
