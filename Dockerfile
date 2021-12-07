@@ -8,6 +8,8 @@ WORKDIR /app
 COPY package.json package-lock.json ./
 RUN npm ci
 
+RUN npm audit fix
+
 COPY . .
 
 RUN npm run build
