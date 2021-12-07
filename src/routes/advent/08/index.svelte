@@ -260,7 +260,7 @@
 	.task-content {
 		width: 95%;
 		margin-top: 1em;
-		font-weight: 600;
+		font-weight: 700;
 		font-size: 1.1rem;
 	}
 
