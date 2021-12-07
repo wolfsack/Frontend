@@ -138,7 +138,7 @@
 	<div class="wrapper">
 		<p class="text">
 			Ich wollte euch noch etwas super wichtiges und geheimes sagen. <br /><br />
-			Leider habe ich keine Zeit mehr meine gespeicherte Nachricht wieder zu endschlüsseln, daher gebe
+			Leider habe ich keine Zeit mehr meine gespeicherte Nachricht wieder zu entschlüsseln, daher gebe
 			ich euch einfach die verschlüsselte Nachricht und den Schlüssel damit ihr die Nachricht selber
 			entschlüsseln könnt.
 		</p>
