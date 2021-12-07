@@ -166,6 +166,11 @@
 			{:else}
 				<h4 class="response wrong">Deine Antwort ist falsch!</h4>
 			{/if}
+
+			<p class="hint">
+				Nur Großbuchstaben! <br />
+				Keine Leerzeichen!<br />
+			</p>
 		</div>
 	</div>
 	<div class="help-wrapper">
@@ -238,7 +243,7 @@
 	.text {
 		border: 1px solid gray;
 		padding: 1em;
-		font-weight: 600;
+		font-weight: 700;
 		font-size: 1.2rem;
 		font-style: italic;
 	}
@@ -265,9 +270,15 @@
 		width: 95%;
 	}
 
+	.hint {
+		font-size: 1.1rem;
+		font-weight: 700;
+	}
+
 	.response {
 		padding: 0.8em;
 		font-size: 1.1rem;
+		font-style: italic;
 	}
 
 	.right {
