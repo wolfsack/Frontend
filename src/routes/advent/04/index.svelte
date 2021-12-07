@@ -84,6 +84,7 @@
 	.back-link {
 		font-size: 1.5rem;
 		color: darkgray;
+		margin-top: 1em;
 		border: 1px solid black;
 		border-radius: 15%;
 		width: fit-content;
@@ -95,6 +96,7 @@
 
 	.title {
 		font-style: italic;
+		margin-top: 1em;
 	}
 
 	.quest-text {

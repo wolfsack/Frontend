@@ -5,7 +5,7 @@
 	let username: string;
 	let accesscode: string;
 
-	let answer_0: string;
+	let answer: string;
 	let right_answer: string = 'ICHWUENSCHEEUCHEINESCHOENEADVENTSZEIT';
 	let pass_phrase: string = 'SUPERDUPERGEHEIMESPASSWORTSIEBTERDEZE';
 	let encrypted: string = 'AWWALHHHGYKIBGPQMFTSUZKSEXSLZFGXJCIHX';
@@ -132,49 +132,46 @@
 <div class="container">
 	<a class="back-link" href="/advent/">zurück</a>
 	<h1 class="title">Achter Dezember</h1>
+
 	<h2 class="quest-title">Aufgabe</h2>
+
 	<div class="wrapper">
-		<p class="quest-text">
-			Ich wollte euch noch etwas super wichtiges und geheimes sagen. <br />
+		<p class="text">
+			Ich wollte euch noch etwas super wichtiges und geheimes sagen. <br /><br />
 			Leider habe ich keine Zeit mehr meine gespeicherte Nachricht wieder zu endschlüsseln, daher gebe
 			ich euch einfach die verschlüsselte Nachricht und den Schlüssel damit ihr die Nachricht selber
 			entschlüsseln könnt.
 		</p>
-		<div class="quest-quests">
-			<div class="quest">
-				<p class="discription">Was wollte ich euch noch sagen?</p>
-				<p class="tip">Hinweis: Hilfe gibts weiter unten</p>
-				<h2 class="quest-given">
-					Meine verschlüsselte Nachricht: <br />
-					{encrypted}
-				</h2>
-				<h2 class="quest-given">
-					Der Schlüssel zum entschlüsseln: <br />
-					{pass_phrase}
-				</h2>
-				<form class="quest-form">
-					<input
-						type="text"
-						id="quest-1-input"
-						name="quest-1-input"
-						class="quest-input"
-						placeholder="Deine Antwort"
-						bind:value={answer_0}
-					/>
-				</form>
-				{#if answer_0 === right_answer || answer_0 === right_answer || answer_0 === right_answer}
-					<h3 class="result result-right">Deine Antwort ist richtig!</h3>
-				{:else}
-					<h3 class="result result-wrong">Deine Antwort ist falsch!</h3>
-				{/if}
-			</div>
+		<div class="task">
+			<h3 class="task-content">
+				Meine verschlüsselte Nachricht: <br class="line-break" />
+				AWWALHHHGYKIBGPQMFTSUZKSEXSLZFGXJCIHX
+			</h3>
+			<h3 class="task-content">
+				Der Schlüssel zum entschlüsseln der Nachricht: <br class="line-break" />
+				SUPERDUPERGEHEIMESPASSWORTSIEBTERDEZE
+			</h3>
+
+			<input
+				type="text"
+				id="quest-1-input"
+				name="quest-1-input"
+				class="task-input"
+				placeholder="Deine Antwort"
+				bind:value={answer}
+			/>
+
+			{#if answer == right_answer}
+				<h4 class="response right">Deine Antwort ist richtig!</h4>
+			{:else}
+				<h4 class="response wrong">Deine Antwort ist falsch!</h4>
+			{/if}
 		</div>
 	</div>
-
-	<div class="help-container">
-		<div class="help-header">
-			<h3 class="help-title">Help</h3>
-			<button on:click={toggle_help} class="help-button">
+	<div class="help-wrapper">
+		<div class="help-toggle">
+			<h3 class="help-toggle-title">Help</h3>
+			<button on:click={toggle_help} class="help-toggle-button">
 				{#if show_help}
 					Hide
 				{:else}
@@ -183,22 +180,19 @@
 			</button>
 		</div>
 		{#if show_help}
-			<div class="help">
-				<ul>
-					<li>
-						<a class="help-link" href="https://de.wikipedia.org/wiki/Caesar-Verschl%C3%BCsselung"
-							>Caesar-Verschlüsselung</a
-						>
-					</li>
-				</ul>
-				<img class="help-img" src="/images/advent/quest-2.png" alt="question-0" />
+			<div class="help-content">
+				<a href="https://de.wikipedia.org/wiki/Caesar-Verschl%C3%BCsselung" class="help-link"
+					>Caesar-Verschlüsselung</a
+				>
+
+				<img src="/images/advent/quest-2.png" alt="help-img" class="help-img" />
 				<p class="help-text">
-					"%" ist der Modulo Opterator. <br />
-					Die Modulo Operation gibt den Rest nach einer Division mit ganzen Zahlen zurück.<br />
-					Beispiel: <br />
+					"%" ist der Modulo Opterator.<br />
+					Die Modulo Opteration gibt den Rest nach einer Division mit Ganzen Zahlen zurück. <br />
+					Beispiel:<br />
 					3 % 2 = 1 <br />
-					6 % 3 = 0 <br />
-					2 % 5 = 2
+					6 % 2 = 0 <br />
+					2 % 5 = 2 <br />
 				</p>
 			</div>
 		{/if}
@@ -215,160 +209,150 @@
 	.back-link {
 		font-size: 1.5rem;
 		color: darkgray;
+		margin-top: 1em;
 		border: 1px solid black;
 		border-radius: 15%;
 		width: fit-content;
 	}
 
+	.title {
+		margin-top: 1em;
+	}
+
+	.quest-title {
+		margin-top: 2em;
+	}
+
 	.wrapper {
 		margin-top: 2em;
-		width: 100%;
+		width: 95%;
 		display: flex;
-		justify-content: space-around;
+		flex-direction: column;
+		align-items: center;
 	}
 
 	.title {
 		font-style: italic;
 	}
 
-	.quest-text {
-		width: 25%;
-		padding: 2em;
-		font-size: 1.2rem;
-		font-weight: 600;
-		font-style: italic;
-	}
-
-	.quest-quests {
-		display: flex;
-		justify-content: space-around;
-		align-items: center;
-		gap: 5%;
-	}
-
-	.discription {
-		font-size: 1.2rem;
-	}
-
-	.tip {
-		padding: 0.5em;
-		font-style: italic;
-	}
-
-	.quest {
+	.text {
 		border: 1px solid gray;
-		padding: 3em;
+		padding: 1em;
+		font-weight: 600;
+		font-size: 1.2rem;
+		font-style: italic;
 	}
 
-	.quest-form {
+	.task {
 		display: flex;
 		flex-direction: column;
-		gap: 1.5em;
 		align-items: center;
-	}
-
-	.quest-input {
-		width: 95%;
-		font-size: 1rem;
-		border-radius: 5%;
-		font-style: italic;
-	}
-
-	.quest-given {
+		margin-top: 2em;
+		border: 1px solid gray;
 		padding: 1em;
 	}
 
-	.result {
-		margin-top: 2em;
+	.task-content {
+		width: 95%;
+		margin-top: 1em;
+		font-weight: 600;
+		font-size: 1.1rem;
 	}
 
-	.result-wrong {
-		color: red;
+	.task-input {
+		margin-top: 1em;
+		font-size: 1.2rem;
+		width: 95%;
 	}
 
-	.result-right {
+	.response {
+		padding: 0.8em;
+		font-size: 1.1rem;
+	}
+
+	.right {
 		color: rgb(0, 231, 0);
 	}
 
-	.help-container {
-		margin-top: 2em;
-		width: 50%;
-		max-width: 1000px;
+	.wrong {
+		color: red;
+	}
+
+	.help-wrapper {
+		width: 90%;
 		display: flex;
 		flex-direction: column;
 		align-items: center;
+		margin-top: 2em;
 	}
 
-	.help-header {
-		border: 1px solid gray;
-		border-radius: 10%;
-		padding: 1em;
+	.help-toggle {
 		width: 100%;
 		display: flex;
+		justify-content: space-evenly;
 		align-items: center;
-		justify-content: space-around;
+		background-color: rgba(101, 122, 168, 0.6);
+		border-radius: 5%;
 	}
 
-	.help-button {
-		margin: 1em;
-		border: 1px solid black;
-		padding: 0.5em;
-		border-radius: 15%;
-		background-color: rgb(0, 76, 163);
-	}
-
-	.help-title {
-		font-size: 2em;
+	.help-toggle-title {
 		font-style: italic;
 	}
 
-	.help {
+	.help-toggle-button {
+		background-color: rgb(207, 207, 207);
+		border-radius: 15%;
+		margin: 0.5em;
+		padding: 1em;
+	}
+
+	.help-toggle-button:hover,
+	.help-toggle-button:focus {
+		background-color: rgb(90, 90, 90);
+	}
+
+	.help-content {
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
 		margin-top: 1em;
 		margin-bottom: 2em;
 		border: 1px solid gray;
-		width: 100%;
-		display: flex;
-		flex-direction: column;
-		align-items: center;
 	}
 
 	.help-link {
+		padding: 1em;
 		font-size: 1.5rem;
-		text-decoration: underline;
 		font-style: italic;
-		color: aqua;
+		text-decoration: underline;
 	}
 
 	.help-img {
-		margin-top: 1em;
-		max-width: 90%;
+		width: 85%;
+		max-width: 800px;
 	}
 
 	.help-text {
 		padding: 1em;
-		font-size: 1.5rem;
+		font-size: 1.2rem;
 		font-weight: 700;
 		font-style: italic;
 	}
 
-	@media (max-width: 800px) {
+	@media all and (min-width: 1000px) {
 		.wrapper {
-			flex-direction: column;
-			gap: 2em;
-			align-items: center;
+			flex-direction: row;
+			gap: 5%;
+			justify-content: space-evenly;
 		}
 
-		.quest-quests {
-			flex-direction: column;
-			gap: 2em;
+		.text {
+			width: 30%;
 		}
 
-		.quest-text {
-			width: 95%;
-		}
-
-		.help-container {
-			width: 95%;
+		.task-content {
+			font-size: 1.5rem;
 		}
 	}
 </style>

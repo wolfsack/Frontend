@@ -51,12 +51,11 @@
 	.wrapper {
 		margin: 0;
 		width: 100%;
-		height: 100vh;
 		display: flex;
+		flex-direction: column;
+		align-items: center;
 	}
 
 	.main {
-		width: 100%;
-		margin: 1em;
 	}
 </style>
