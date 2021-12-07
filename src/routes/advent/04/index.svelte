@@ -22,14 +22,13 @@
 </svelte:head>
 
 <div class="container">
+	<a class="back-link" href="/advent/">zurück</a>
 	<h1 class="title">Vierter Dezember</h1>
 
 	<div class="wrapper">
 		<h2 class="quest-title">Aufgabe</h2>
-		<p class="quest-text">
-			Nach drei Aufgaben Rätsel-Raten wird es Zeit sich wieder etwas Handfesterem zu widmen!<br />
-			Fangen wir mit einfachen Rechenaufgaben an:
-		</p>
+
+		<p class="quest-text" />
 		<div class="quest-quests">
 			<div class="quest">
 				<p class="discription">Was ist x?</p>
@@ -79,6 +78,15 @@
 	.container {
 		display: flex;
 		flex-direction: column;
+		align-items: center;
+	}
+
+	.back-link {
+		font-size: 1.5rem;
+		color: darkgray;
+		border: 1px solid black;
+		border-radius: 15%;
+		width: fit-content;
 	}
 
 	.wrapper {
@@ -100,6 +108,7 @@
 		display: flex;
 		justify-content: space-around;
 		align-items: center;
+		gap: 5%;
 	}
 
 	.discription {
