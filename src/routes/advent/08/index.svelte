@@ -10,6 +10,10 @@
 	let pass_phrase: string = 'SUPERDUPERGEHEIMESPASSWORTSIEBTERDEZE';
 	let encrypted: string = 'AWWALHHHGYKIBGPQMFTSUZKSEXSLZFGXJCIHX';
 
+	let plain_test: string = 'ichbineinsicherersatz'.toUpperCase();
+	let key_test: string = 'sichersichersichersic'.toUpperCase();
+	let cipher_test: string = 'akjimewqpzmtzmtlvjsbb'.toUpperCase();
+
 	let show_help: boolean = false;
 
 	let map = {
@@ -75,6 +79,9 @@
 			return;
 		}
 
+		input = input.toUpperCase();
+		key = key.toUpperCase();
+
 		let output: String = '';
 		for (var i = 0; i < input.length; i++) {
 			let input_nr = map[input.charAt(i)];
@@ -83,7 +90,6 @@
 			let nr = (input_nr + key_nr) % 26;
 
 			let new_char = map_reverse[nr];
-
 			output += new_char;
 		}
 
@@ -94,6 +100,9 @@
 		if (input.length !== key.length) {
 			return;
 		}
+		input = input.toUpperCase();
+		key = key.toUpperCase();
+
 		let output: String = '';
 		for (var i = 0; i < input.length; i++) {
 			let input_nr = map[input.charAt(i)];
@@ -110,6 +119,20 @@
 		}
 
 		return output;
+	}
+
+	let ciphered = encrypt(plain_test, key_test);
+	let deciphered = decrypt(ciphered, key_test);
+	if (ciphered == cipher_test) {
+		console.log('encrypt good');
+	} else {
+		console.log('encrypt bad');
+	}
+
+	if (deciphered == plain_test) {
+		console.log('decrypt good');
+	} else {
+		console.log('decrypt bad');
 	}
 
 	const toggle_help = () => {
@@ -186,8 +209,12 @@
 		</div>
 		{#if show_help}
 			<div class="help-content">
-				<a href="https://de.wikipedia.org/wiki/Caesar-Verschl%C3%BCsselung" class="help-link"
-					>Caesar-Verschlüsselung</a
+				<a
+					href="https://de.serlo.org/informatik/48392/vigen%C3%A8re-verschl%C3%BCsselung"
+					class="help-link">Vigenère-Verschlüsselung-1</a
+				>
+				<a href="https://studyflix.de/informatik/vigenere-verschlusselung-1607" class="help-link"
+					>Vigenère-Verschlüsselung-2</a
 				>
 
 				<img src="/images/advent/quest-2.png" alt="help-img" class="help-img" />
@@ -199,6 +226,8 @@
 					6 % 2 = 0 <br />
 					2 % 5 = 2 <br />
 				</p>
+
+				<a href="/advent/08/playground/" class="help-link">Spielplatz</a>
 			</div>
 		{/if}
 	</div>
