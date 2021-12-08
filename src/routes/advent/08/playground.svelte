@@ -113,7 +113,7 @@
 	};
 
 	const decrypt_cipher_field = () => {
-		plain = encrypt(cipher, key);
+		plain = decrypt(cipher, key);
 	};
 </script>
 
