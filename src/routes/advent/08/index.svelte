@@ -168,11 +168,11 @@
 		<div class="task">
 			<h3 class="task-content">
 				Meine verschlüsselte Nachricht: <br class="line-break" />
-				AWWALHHHGYKIBGPQMFTSUZKSEXSLZFGXJCIHX
+				{encrypted}
 			</h3>
 			<h3 class="task-content">
 				Der Schlüssel zum entschlüsseln der Nachricht: <br class="line-break" />
-				SUPERDUPERGEHEIMESPASSWORTSIEBTERDEZE
+				{pass_phrase}
 			</h3>
 
 			<input
