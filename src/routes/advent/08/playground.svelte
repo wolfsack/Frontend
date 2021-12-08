@@ -194,9 +194,17 @@
 		justify-content: space-around;
 		width: 100%;
 	}
+
+	.input-wrapper {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		width: 45%;
+	}
 	.input-plain,
 	.input-cipher {
 		height: 100px;
+		width: 95%;
 	}
 
 	.input-key {
@@ -209,6 +217,7 @@
 		border-radius: 15%;
 		padding: 0.5em;
 		background-color: lightgray;
+		max-width: 200px;
 	}
 
 	.input-submit-button:hover,
